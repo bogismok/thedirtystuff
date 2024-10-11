@@ -1,6 +1,7 @@
 package net.bogismok.thedirtystuff;
 
 import com.mojang.logging.LogUtils;
+import net.bogismok.thedirtystuff.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -41,7 +42,7 @@ public class TheDirtyStuff {
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
+        ModItems.register(modEventBus);
 
 
 
@@ -57,7 +58,11 @@ public class TheDirtyStuff {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.CIGARETTE);
+            event.accept(ModItems.TOBACCO_LEAFS);
+            event.accept(ModItems.DRIED_TOBACCO_LEAFS);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
