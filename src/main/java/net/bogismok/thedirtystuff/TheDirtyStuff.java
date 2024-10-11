@@ -1,6 +1,7 @@
 package net.bogismok.thedirtystuff;
 
 import com.mojang.logging.LogUtils;
+import net.bogismok.thedirtystuff.block.ModBlocks;
 import net.bogismok.thedirtystuff.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -43,7 +44,7 @@ public class TheDirtyStuff {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         ModItems.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
 
 
         // Register the item to a creative tab
