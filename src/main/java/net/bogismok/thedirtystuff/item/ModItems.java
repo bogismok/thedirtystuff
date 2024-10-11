@@ -13,9 +13,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> CIGARETTE = ITEMS.register("cigarette",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TOBACCO_LEAFS = ITEMS.register("tobacco_leafs",
+    public static final RegistryObject<Item> TOBACCO_LEAVES = ITEMS.register("tobacco_leaves",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> DRIED_TOBACCO_LEAFS = ITEMS.register("dried_tobacco_leafs",
+    public static final RegistryObject<Item> DRIED_TOBACCO_LEAVES = ITEMS.register("dried_tobacco_leaves",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "thedirtystuff:item/dried_tobacco_leafs"
+    "layer0": "thedirtystuff:item/dried_tobacco_leaves"
   }
 }

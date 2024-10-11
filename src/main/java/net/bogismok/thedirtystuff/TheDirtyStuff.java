@@ -60,8 +60,8 @@ public class TheDirtyStuff {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.CIGARETTE);
-            event.accept(ModItems.TOBACCO_LEAFS);
-            event.accept(ModItems.DRIED_TOBACCO_LEAFS);
+            event.accept(ModItems.TOBACCO_LEAVES);
+            event.accept(ModItems.DRIED_TOBACCO_LEAVES);
         }
     }
 
