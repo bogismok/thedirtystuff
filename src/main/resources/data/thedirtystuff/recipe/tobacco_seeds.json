@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thedirtystuff:tobacco_seeds"
+  }
+}

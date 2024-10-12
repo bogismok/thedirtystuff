@@ -1,5 +1,13 @@
 {
+  "_comment1": "items",
   "item.thedirtystuff.cigarette": "Cigarette",
   "item.thedirtystuff.dried_tobacco_leaves": "Dried Tobacco Leaves",
-  "item.thedirtystuff.tobacco_leaves": "Tobacco Leaves"
+  "item.thedirtystuff.tobacco_leaves": "Tobacco Leaves",
+  "item.thedirtystuff.tobacco_seeds": "Tobacco Seeds",
+
+  "_comment2": "blocks",
+  "block.thedirtystuff.drying_rack": "Drying Rack",
+
+  "_comment3": "tabs",
+  "creativetab.thedirtystuff.thedirtystuff": "The Dirty Stuff"
 }
