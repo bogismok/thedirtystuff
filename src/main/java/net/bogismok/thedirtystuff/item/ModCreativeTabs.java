@@ -22,6 +22,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.DRIED_TOBACCO_LEAVES.get());
                         output.accept(ModItems.TOBACCO_SEEDS.get());
                         output.accept(ModItems.CIGARETTE.get());
+                        output.accept(ModBlocks.DRYING_RACK.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
