@@ -5,12 +5,11 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.CropBlock;
 
 public class TobaccoBlock extends CropBlock {
-    public TobaccoBlock(Properties pProperties){
-        super(pProperties);
+    public TobaccoBlock(Properties properties){
+        super(properties);
     }
     @Override
     protected final ItemLike getBaseSeedId() {
         return ModItems.TOBACCO_SEEDS.get();
     }
-    //idk if it's good if there's only this little code, but it works, pls don't hate on me
 }

@@ -1,7 +1,7 @@
 package net.bogismok.thedirtystuff.block;
 
 import net.bogismok.thedirtystuff.TheDirtyStuff;
-import net.bogismok.thedirtystuff.block.custom.DryingRack;
+import net.bogismok.thedirtystuff.block.custom.DryingRackBlock;
 import net.bogismok.thedirtystuff.block.custom.TobaccoBlock;
 import net.bogismok.thedirtystuff.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -22,7 +22,7 @@ public class ModBlocks {
 
     //blocks
     public static final RegistryObject<Block> DRYING_RACK = registerBlock("drying_rack",
-            () -> new DryingRack(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+            () -> new DryingRackBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion().strength(1.0F, 1.0F).randomTicks()));
 
     //item blocks
     public static final RegistryObject<Block> TOBACCO = BLOCKS.register("tobacco",

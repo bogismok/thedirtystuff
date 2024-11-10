@@ -4,7 +4,8 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"1": "thedirtystuff:block/drying_rack",
-		"2": "thedirtystuff:item/tobacco_leaves"
+		"2": "thedirtystuff:item/tobacco_leaves",
+		"particle": "thedirtystuff:block/drying_rack"
 	},
 	"elements": [
 		{
@@ -254,42 +255,6 @@
 				"north": {"uv": [16, 16, 0, 0], "texture": "#2"},
 				"south": {"uv": [0, 16, 16, 0], "texture": "#2"}
 			}
-		},
-		{
-			"from": [4.67678, 6.5, -0.42678],
-			"to": [4.67678, 17.5, 10.57322],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [4.5, 9, 5.25]},
-			"faces": {
-				"east": {"uv": [0, 16, 16, 0], "texture": "#2"},
-				"west": {"uv": [16, 16, 0, 0], "texture": "#2"}
-			}
-		},
-		{
-			"from": [-1.17678, 6.5, 5.42678],
-			"to": [9.82322, 17.5, 5.42678],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [4.5, 9, 5.25]},
-			"faces": {
-				"north": {"uv": [0, 16, 16, 0], "texture": "#2"},
-				"south": {"uv": [16, 16, 0, 0], "texture": "#2"}
-			}
-		},
-		{
-			"from": [-1, 7, 11],
-			"to": [10, 18, 11],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [4.5, 12.5, 11]},
-			"faces": {
-				"north": {"uv": [0, 16, 16, 0], "texture": "#2"},
-				"south": {"uv": [16, 16, 0, 0], "texture": "#2"}
-			}
-		},
-		{
-			"from": [4.5, 7, 6],
-			"to": [4.5, 18, 17],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [4.5, 12.5, 11.5]},
-			"faces": {
-				"east": {"uv": [16, 16, 0, 0], "texture": "#2"},
-				"west": {"uv": [0, 16, 16, 0], "texture": "#2"}
-			}
 		}
 	],
 	"display": {
@@ -370,18 +335,6 @@
 							"origin": [11.5, 11.5, 11],
 							"color": 0,
 							"children": [23, 24]
-						},
-						{
-							"name": "leaf3",
-							"origin": [4.5, 9, 5.25],
-							"color": 0,
-							"children": [25, 26]
-						},
-						{
-							"name": "leaf4",
-							"origin": [4.5, 12.5, 11.5],
-							"color": 0,
-							"children": [27, 28]
 						}
 					]
 				}

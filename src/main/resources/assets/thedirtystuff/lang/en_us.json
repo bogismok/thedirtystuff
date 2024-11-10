@@ -9,5 +9,8 @@
   "block.thedirtystuff.drying_rack": "Drying Rack",
 
   "_comment3": "tabs",
-  "creativetab.thedirtystuff.thedirtystuff": "The Dirty Stuff"
+  "creativetab.thedirtystuff.thedirtystuff": "The Dirty Stuff",
+
+  "_comment4": "menus",
+  "name.thedirtystuff.drying_rack": "Drying Rack"
 }

@@ -1,0 +1,9 @@
+{
+  "type": "thedirtystuff:drying",
+  "ingredient": {
+    "item": "thedirtystuff:tobacco_leaves"
+  },
+  "result": {
+    "id": "thedirtystuff:dried_tobacco_leaves"
+  }
+}
