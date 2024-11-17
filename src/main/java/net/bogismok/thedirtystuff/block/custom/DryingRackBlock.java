@@ -16,25 +16,19 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class DryingRackBlock extends BaseEntityBlock {
     public static final MapCodec<DryingRackBlock> CODEC = simpleCodec(DryingRackBlock::new);
-
-    public static final VoxelShape SHAPE = Shapes.or(
-            Block.box(0.0, 15.0, 0.0, 16.0, 16.0, 16.0),
-            Block.box(15.0, 0.0, 0.0, 16.0, 15.0, 1.0),
-            Block.box(0.0, 0.0, 15.0, 1.0, 15.0, 16.0),
-            Block.box(15.0, 0.0, 15.0, 16.0, 15.0, 16.0),
-            Block.box(0.0, 0.0, 0.0, 1.0, 15.0, 1.0)
-    );
+    public static final Property<Integer> LEVEL = IntegerProperty.create("level", 0, 4);
 
     public DryingRackBlock(Properties pProperties) {
         super(pProperties);
+        this.registerDefaultState(this.getStateDefinition().any().setValue(LEVEL, 0));
     }
 
     @Override
@@ -42,13 +36,13 @@ public class DryingRackBlock extends BaseEntityBlock {
         return CODEC;
     }
 
-    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return 1.0F;
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(LEVEL);
     }
 
-    @Override
-    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return SHAPE;
+    protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+        return 1.0F;
     }
 
     @Override
@@ -94,7 +88,6 @@ public class DryingRackBlock extends BaseEntityBlock {
         if(pLevel.isClientSide()) {
             return null;
         }
-
         return createTickerHelper(pBlockEntityType, ModBlockEntities.DRYING_RACK_BE.get(),
                 (level, blockPos, blockState, dryingRackBlockEntity) -> dryingRackBlockEntity.tick(level, blockPos, blockState));
     }

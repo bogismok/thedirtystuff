@@ -3,7 +3,9 @@ package net.bogismok.thedirtystuff;
 import com.mojang.logging.LogUtils;
 import net.bogismok.thedirtystuff.block.ModBlocks;
 import net.bogismok.thedirtystuff.block.entity.ModBlockEntities;
+import net.bogismok.thedirtystuff.component.ModDataComponentTypes;
 import net.bogismok.thedirtystuff.item.ModCreativeTabs;
+import net.bogismok.thedirtystuff.item.ModItemProperties;
 import net.bogismok.thedirtystuff.item.ModItems;
 import net.bogismok.thedirtystuff.recipe.ModRecipes;
 import net.bogismok.thedirtystuff.screen.custom.DryingRackScreen;
@@ -40,6 +42,8 @@ public class TheDirtyStuff {
 
         ModRecipes.register(modEventBus);
 
+        ModDataComponentTypes.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -59,6 +63,7 @@ public class TheDirtyStuff {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.DRYING_RACK_MENU.get(), DryingRackScreen::new);
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

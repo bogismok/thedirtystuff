@@ -1,5 +1,7 @@
 package net.bogismok.thedirtystuff.block.entity.custom;
 
+import net.bogismok.thedirtystuff.TheDirtyStuff;
+import net.bogismok.thedirtystuff.block.custom.DryingRackBlock;
 import net.bogismok.thedirtystuff.block.entity.ModBlockEntities;
 import net.bogismok.thedirtystuff.recipe.ModRecipes;
 import net.bogismok.thedirtystuff.recipe.DryingRackRecipe;
@@ -25,6 +27,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -137,6 +140,12 @@ public class DryingRackBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     public void tick(Level level, BlockPos pPos, BlockState pState) {
+        int blockstate = setBlockstate(pState);
+
+        if (pState.getValue(DryingRackBlock.LEVEL) != blockstate){
+            level.setBlockAndUpdate(worldPosition, getBlockState().setValue(DryingRackBlock.LEVEL, blockstate));
+        }
+
         if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
             increaseCraftingProgress();
             setChanged(level, pPos, pState);
@@ -148,6 +157,15 @@ public class DryingRackBlockEntity extends BlockEntity implements MenuProvider {
         } else {
             resetProgress();
         }
+    }
+
+    private int setBlockstate(BlockState pState) {
+        int count = itemHandler.getStackInSlot(INPUT_SLOT).getCount();
+        if(count >= 48) return 4;
+        else if(count >= 32) return 3;
+        else if(count >= 16) return 2;
+        else if(count > 0) return 1;
+        return 0;
     }
 
     private void resetProgress() {

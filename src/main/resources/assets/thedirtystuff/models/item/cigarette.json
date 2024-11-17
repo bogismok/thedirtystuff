@@ -1,60 +1,137 @@
 {
-	"credit": "Made with Blockbench",
-	"textures": {
-		"1": "thedirtystuff:item/cigarette",
-		"particle": "thedirtystuff:item/cigarette"
+	"parent": "minecraft:item/handheld",
+	"loader": "forge:separate_transforms",
+	"base": {
+		"parent": "thedirtystuff:item/cigarette3d"
 	},
-	"elements": [
-		{
-			"name": "main",
-			"from": [6, 5, 7.5],
-			"to": [10, 6, 8.5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5.5, 8]},
-			"faces": {
-				"north": {"uv": [0, 0, 4, 1], "texture": "#1"},
-				"east": {"uv": [2, 3, 3, 4], "texture": "#1"},
-				"south": {"uv": [0, 1, 4, 2], "texture": "#1"},
-				"west": {"uv": [2, 2, 3, 3], "texture": "#1"},
-				"up": {"uv": [1, 6, 0, 2], "rotation": 270, "texture": "#1"},
-				"down": {"uv": [2, 2, 1, 6], "rotation": 90, "texture": "#1"}
+	"perspectives": {
+		"gui": {
+			"parent": "minecraft:item/handheld",
+			"textures": {
+				"layer0": "thedirtystuff:item/cigarette20"
 			}
 		}
-	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [0, -90, 0],
-			"translation": [0, 2.5, 0],
-			"scale": [0.8, 0.8, 0.8]
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.05
+			},
+			"model": "thedirtystuff:item/cigarette1"
 		},
-		"thirdperson_lefthand": {
-			"rotation": [0, 90, 0],
-			"translation": [0, 2.5, 0],
-			"scale": [0.8, 0.8, 0.8]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.10
+			},
+			"model": "thedirtystuff:item/cigarette2"
 		},
-		"firstperson_righthand": {
-			"rotation": [ 0, -90, 0 ],
-			"translation": [ 3, 0, -7.5 ]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.15
+			},
+			"model": "thedirtystuff:item/cigarette3"
 		},
-		"firstperson_lefthand": {
-			"rotation": [ 0, 90, 0 ],
-			"translation": [ 3  , 0, -7.5 ]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.20
+			},
+			"model": "thedirtystuff:item/cigarette4"
 		},
-		"ground": {
-			"translation": [0, 2, 2],
-			"scale": [0.8, 0.8, 0.8]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.25
+			},
+			"model": "thedirtystuff:item/cigarette5"
 		},
-		"gui": {
-			"rotation": [0, 135, -45],
-			"translation": [-3, 4.5, 0],
-			"scale": [2.5, 2.5, 2.5]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.30
+			},
+			"model": "thedirtystuff:item/cigarette6"
 		},
-		"head": {
-			"rotation": [45, -90, 0],
-			"translation": [-7, 3, 3.5]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.35
+			},
+			"model": "thedirtystuff:item/cigarette7"
 		},
-		"fixed": {
-			"rotation": [0, 180, 0],
-			"translation": [0, 2.5, 0]
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.40
+			},
+			"model": "thedirtystuff:item/cigarette8"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.45
+			},
+			"model": "thedirtystuff:item/cigarette9"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.50
+			},
+			"model": "thedirtystuff:item/cigarette10"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.55
+			},
+			"model": "thedirtystuff:item/cigarette11"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.60
+			},
+			"model": "thedirtystuff:item/cigarette12"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.65
+			},
+			"model": "thedirtystuff:item/cigarette13"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.70
+			},
+			"model": "thedirtystuff:item/cigarette14"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.75
+			},
+			"model": "thedirtystuff:item/cigarette15"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.80
+			},
+			"model": "thedirtystuff:item/cigarette16"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.85
+			},
+			"model": "thedirtystuff:item/cigarette17"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.90
+			},
+			"model": "thedirtystuff:item/cigarette18"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 0.95
+			},
+			"model": "thedirtystuff:item/cigarette19"
+		},
+		{
+			"predicate": {
+				"thedirtystuff:amount": 1.00
+			},
+			"model": "thedirtystuff:item/cigarette20"
 		}
-	}
+	]
 }

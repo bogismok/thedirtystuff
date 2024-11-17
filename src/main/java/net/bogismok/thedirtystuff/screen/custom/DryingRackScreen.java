@@ -22,9 +22,7 @@ public class DryingRackScreen extends AbstractContainerScreen<DryingRackMenu> {
     @Override
     protected void init() {
         super.init();
-        // Gets rid of title and inventory title
-        this.inventoryLabelY = 10000;
-        this.titleLabelY = 10000;
+        this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
     }
 
     @Override

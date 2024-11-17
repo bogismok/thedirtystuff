@@ -1,0 +1,15 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "forge:separate_transforms",
+	"base": {
+		"parent": "thedirtystuff:item/cigarette3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "minecraft:item/handheld",
+			"textures": {
+				"layer0": "thedirtystuff:item/cigarette11"
+			}
+		}
+	}
+}

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "level=0": {
       "model": "thedirtystuff:block/drying_rack0"
+    },
+    "level=1": {
+      "model": "thedirtystuff:block/drying_rack1"
+    },
+    "level=2": {
+      "model": "thedirtystuff:block/drying_rack2"
+    },
+    "level=3": {
+      "model": "thedirtystuff:block/drying_rack3"
+    },
+    "level=4": {
+      "model": "thedirtystuff:block/drying_rack4"
     }
   }
 }

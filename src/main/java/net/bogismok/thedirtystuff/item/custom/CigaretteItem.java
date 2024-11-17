@@ -1,5 +1,6 @@
 package net.bogismok.thedirtystuff.item.custom;
 
+import net.bogismok.thedirtystuff.component.ModDataComponentTypes;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -15,8 +16,11 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 public class CigaretteItem extends Item {
-    public static final int singleUseDuration = 32;
-    int smokeCombo = 0;
+    public static final int singleUseDuration = 16;
+    public static final int maxAmount = 20;
+    public static final int amplifier = 2;
+
+    public int smokeCombo = 0;
 
     public CigaretteItem(Properties pProperties) {
         super(pProperties);
@@ -25,7 +29,7 @@ public class CigaretteItem extends Item {
     @Override
     public int getUseDuration(ItemStack pStack, LivingEntity pLivingEntity) {
         int damageToTicks = pStack.getDamageValue() * singleUseDuration;
-        return 384 - damageToTicks;
+        return 192 - damageToTicks;
     }
 
     @Override
@@ -36,13 +40,9 @@ public class CigaretteItem extends Item {
     @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity, int pTimeCharged) {
         if (!pLevel.isClientSide && smokeCombo != 0) {
-            int amplifier = smokeCombo * 2;
-            smokePraticles(pLivingEntity, pLevel, amplifier);
+            smokePraticles(pLivingEntity, pLevel, smokeCombo * amplifier);
             smokeSound(pLevel, pLivingEntity);
-            for (MobEffectInstance mobEffects : pLivingEntity.getActiveEffects()) {
-                int duration = mobEffects.getDuration();
-                pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration + 100 * smokeCombo, 2));
-            }
+            smokeEffect(pLivingEntity, smokeCombo);
             smokeCombo = 0;
         }
     }
@@ -57,14 +57,16 @@ public class CigaretteItem extends Item {
         if (!pLevel.isClientSide) {
             smokeCombo += 1;
             InteractionHand pHand = pLivingEntity.getUsedItemHand();
-            int amplifier = smokeCombo * 2;
-            smokeDurabilityUse(pLivingEntity, pHand, pStack, 1);
-            smokePraticles(pLivingEntity, pLevel, amplifier);
-            smokeSound(pLevel, pLivingEntity);
-            for (MobEffectInstance mobEffects : pLivingEntity.getActiveEffects()) {
-                int duration = mobEffects.getDuration();
-                pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration + 100 * smokeCombo, 2));
+            if (pStack.get(ModDataComponentTypes.AMOUNT.get()) > 1) {
+                pStack.setDamageValue(0);
+                pStack.set(ModDataComponentTypes.AMOUNT.get(), pStack.get(ModDataComponentTypes.AMOUNT.get()) - 1);
             }
+            else if(pStack.get(ModDataComponentTypes.AMOUNT.get()) == 1) {
+                smokeDurabilityUse(pLivingEntity, pHand, pStack, 1);
+            }
+            smokePraticles(pLivingEntity, pLevel, smokeCombo * amplifier);
+            smokeSound(pLevel, pLivingEntity);
+            smokeEffect(pLivingEntity, smokeCombo);
             smokeCombo = 0;
         }
         return pStack;
@@ -72,6 +74,10 @@ public class CigaretteItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+        ItemStack stack = pPlayer.getItemInHand(pHand);
+        if (stack.get(ModDataComponentTypes.AMOUNT.get()) == null) {
+            stack.set(ModDataComponentTypes.AMOUNT.get(), maxAmount);
+        }
         return ItemUtils.startUsingInstantly(pLevel, pPlayer, pHand);
     }
 
@@ -108,5 +114,17 @@ public class CigaretteItem extends Item {
                 2.0F,
                 0.5F
         );
+    }
+    public static void smokeEffect (LivingEntity pLivingEntity, int smokeCombo) {
+        if(pLivingEntity.hasEffect(MobEffects.MOVEMENT_SPEED)) {
+            for (MobEffectInstance mobEffects : pLivingEntity.getActiveEffects()) {
+                if (mobEffects.is(MobEffects.MOVEMENT_SPEED)){
+                    int duration = mobEffects.getDuration();
+                    pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration + 100 * smokeCombo, 2));
+                }
+            }
+        } else {
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100 * smokeCombo, 2));
+        }
     }
 }
