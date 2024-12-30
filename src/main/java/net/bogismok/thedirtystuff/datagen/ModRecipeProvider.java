@@ -24,7 +24,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("###")
                 .pattern("X X")
                 .define('#', Tags.Items.RODS_WOODEN)
-                .define('X', ItemTags.PLANKS);
+                .define('X', ItemTags.PLANKS)
+                .unlockedBy("got_wood", has(ItemTags.PLANKS)).save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CIGARETTE.get(), 1)
                 .requires(ModItems.DRIED_TOBACCO_LEAVES.get())
