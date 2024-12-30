@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class DryingRackMenu extends AbstractContainerMenu {
@@ -34,10 +35,22 @@ public class DryingRackMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(itemHandler -> {
             this.addSlot(new SlotItemHandler(itemHandler, 0, 44, 35));
-            this.addSlot(new SlotItemHandler(itemHandler, 1, 116, 35));
+            this.addSlot(new ResultSlotItemHandler(itemHandler, 1, 116, 35));
         });
 
         addDataSlots(data);
+    }
+
+    private class ResultSlotItemHandler extends SlotItemHandler {
+
+        public ResultSlotItemHandler(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
+            super(itemHandler, index, xPosition, yPosition);
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack stack) {
+            return false;
+        }
     }
 
     public boolean isCrafting() {

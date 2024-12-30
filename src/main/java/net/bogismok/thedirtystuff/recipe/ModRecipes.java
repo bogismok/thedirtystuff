@@ -1,6 +1,7 @@
 package net.bogismok.thedirtystuff.recipe;
 
 import net.bogismok.thedirtystuff.TheDirtyStuff;
+import net.bogismok.thedirtystuff.recipe.custom.DryingRackRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.eventbus.api.IEventBus;

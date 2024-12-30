@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "thedirtystuff:tobacco_leaves"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thedirtystuff:tobacco_leaves_package"
+  }
+}

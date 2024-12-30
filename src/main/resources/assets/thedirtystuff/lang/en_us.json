@@ -1,9 +1,12 @@
 {
   "_comment1": "items",
   "item.thedirtystuff.cigarette": "Cigarette",
+  "item.thedirtystuff.cigar": "Cigar",
   "item.thedirtystuff.dried_tobacco_leaves": "Dried Tobacco Leaves",
   "item.thedirtystuff.tobacco_leaves": "Tobacco Leaves",
   "item.thedirtystuff.tobacco_seeds": "Tobacco Seeds",
+  "item.thedirtystuff.tobacco_leaves_package": "Tobacco Leaves Package",
+  "item.thedirtystuff.dried_tobacco_leaves_package": "Dried Tobacco Leaves Package",
 
   "_comment2": "blocks",
   "block.thedirtystuff.drying_rack": "Drying Rack",

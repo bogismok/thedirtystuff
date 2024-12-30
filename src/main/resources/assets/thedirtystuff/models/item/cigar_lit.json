@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "thedirtystuff:item/cigarette",
-		"particle": "thedirtystuff:item/cigarette"
+		"1": "thedirtystuff:item/cigar_lit",
+		"particle": "thedirtystuff:item/cigar_lit"
 	},
 	"elements": [
 		{
@@ -60,9 +60,9 @@
 	"overrides": [
 		{
 			"predicate": {
-				"thedirtystuff:lit": 1.0
+				"thedirtystuff:lit": 1
 			},
-			"model": "thedirtystuff:item/cigarette_lit"
+			"model": "thedirtystuff:item/cigar_lit"
 		}
 	]
 }

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "thedirtystuff:item/cigarette",
-		"particle": "thedirtystuff:item/cigarette"
+		"1": "thedirtystuff:item/cigarette_lit",
+		"particle": "thedirtystuff:item/cigarette_lit"
 	},
 	"elements": [
 		{
@@ -56,13 +56,5 @@
 			"rotation": [0, 180, 0],
 			"translation": [0, 2.5, 0]
 		}
-	},
-	"overrides": [
-		{
-			"predicate": {
-				"thedirtystuff:lit": 1.0
-			},
-			"model": "thedirtystuff:item/cigarette_lit"
-		}
-	]
+	}
 }

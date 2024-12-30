@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dried_tobacco": {
+      "conditions": {
+        "items": [
+          {
+            "items": "thedirtystuff:dried_tobacco_leaves"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "thedirtystuff:cigarette"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dried_tobacco"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "thedirtystuff:cigarette"
+    ]
+  }
+}

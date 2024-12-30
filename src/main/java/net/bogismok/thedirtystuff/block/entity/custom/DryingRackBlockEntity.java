@@ -1,11 +1,10 @@
 package net.bogismok.thedirtystuff.block.entity.custom;
 
-import net.bogismok.thedirtystuff.TheDirtyStuff;
 import net.bogismok.thedirtystuff.block.custom.DryingRackBlock;
 import net.bogismok.thedirtystuff.block.entity.ModBlockEntities;
 import net.bogismok.thedirtystuff.recipe.ModRecipes;
-import net.bogismok.thedirtystuff.recipe.DryingRackRecipe;
-import net.bogismok.thedirtystuff.recipe.DryingRackRecipeInput;
+import net.bogismok.thedirtystuff.recipe.custom.DryingRackRecipe;
+import net.bogismok.thedirtystuff.recipe.custom.DryingRackRecipeInput;
 import net.bogismok.thedirtystuff.screen.custom.DryingRackMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,7 +26,6 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
