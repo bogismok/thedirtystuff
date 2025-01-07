@@ -16,7 +16,5 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TOBACCO_SEEDS.get());
         basicItem(ModItems.TOBACCO_LEAVES.get());
         basicItem(ModItems.DRIED_TOBACCO_LEAVES.get());
-        basicItem(ModItems.TOBACCO_LEAVES_PACKAGE.get());
-        basicItem(ModItems.DRIED_TOBACCO_LEAVES_PACKAGE.get());
     }
 }

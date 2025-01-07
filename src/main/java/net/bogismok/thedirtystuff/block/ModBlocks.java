@@ -1,8 +1,10 @@
 package net.bogismok.thedirtystuff.block;
 
 import net.bogismok.thedirtystuff.TheDirtyStuff;
+import net.bogismok.thedirtystuff.block.custom.DriedTobaccoLeavesPalletBlock;
 import net.bogismok.thedirtystuff.block.custom.DryingRackBlock;
 import net.bogismok.thedirtystuff.block.custom.TobaccoBlock;
+import net.bogismok.thedirtystuff.block.custom.TobaccoLeavesPalletBlock;
 import net.bogismok.thedirtystuff.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -27,6 +29,10 @@ public class ModBlocks {
     //item blocks
     public static final RegistryObject<Block> TOBACCO = BLOCKS.register("tobacco",
             () -> new TobaccoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> TOBACCO_LEAVES_PALLET = BLOCKS.register("tobacco_leaves_pallet",
+            () -> new TobaccoLeavesPalletBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final RegistryObject<Block> DRIED_TOBACCO_LEAVES_PALLET = BLOCKS.register("dried_tobacco_leaves_pallet",
+            () -> new DriedTobaccoLeavesPalletBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

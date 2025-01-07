@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "thedirtystuff:item/tobacco_leaves_package"
-  }
-}

@@ -1,0 +1,7 @@
+{
+	"parent": "thedirtystuff:block/tobacco_leaves_pallet5",
+	"textures": {
+		"1": "thedirtystuff:block/dried_tobacco_leaves_pallet",
+		"particle": "thedirtystuff:block/dried_tobacco_leaves_pallet"
+	}
+}

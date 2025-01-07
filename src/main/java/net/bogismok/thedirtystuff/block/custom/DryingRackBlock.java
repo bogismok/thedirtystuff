@@ -42,7 +42,7 @@ public class DryingRackBlock extends BaseEntityBlock {
     }
 
     protected float getShadeBrightness(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return 1.0F;
+        return 1;
     }
 
     @Override

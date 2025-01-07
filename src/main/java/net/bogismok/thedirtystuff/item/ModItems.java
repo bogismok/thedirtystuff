@@ -20,10 +20,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DRIED_TOBACCO_LEAVES = ITEMS.register("dried_tobacco_leaves",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TOBACCO_LEAVES_PACKAGE = ITEMS.register("tobacco_leaves_package",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> DRIED_TOBACCO_LEAVES_PACKAGE = ITEMS.register("dried_tobacco_leaves_package",
-            () -> new Item(new Item.Properties()));
 
     //custom items
     public static final RegistryObject<Item> CIGARETTE = ITEMS.register("cigarette",
@@ -34,6 +30,10 @@ public class ModItems {
     //block items
     public static final RegistryObject<Item> TOBACCO_SEEDS = ITEMS.register("tobacco_seeds",
             () -> new ItemNameBlockItem(ModBlocks.TOBACCO.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TOBACCO_LEAVES_PACKAGE = ITEMS.register("tobacco_leaves_package",
+            () -> new ItemNameBlockItem(ModBlocks.TOBACCO_LEAVES_PALLET.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DRIED_TOBACCO_LEAVES_PACKAGE = ITEMS.register("dried_tobacco_leaves_package",
+            () -> new ItemNameBlockItem(ModBlocks.DRIED_TOBACCO_LEAVES_PALLET.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
